@@ -1,0 +1,7 @@
+"""
+took following line
+
+"test": "echo \"Error: no test specified\" && exit 1"
+
+from package.json "scripts" section
+"""
