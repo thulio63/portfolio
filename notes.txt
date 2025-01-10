@@ -5,3 +5,9 @@ took following line
 
 from package.json "scripts" section
 """
+
+    // if (!request.session.visitCount) {
+    //   request.session.visitCount = 0;
+    // }
+    // request.session.visitCount += 1;
+    // console.log(`Number of visits: ${request.session.visitCount}`);

@@ -6,14 +6,15 @@ const feedbackRoute = require("./feedback");
 const router = express.Router();
 
 module.exports = (params) => {
-  router.get("/", (request, response) => {
-    // if (!request.session.visitCount) {
-    //   request.session.visitCount = 0;
-    // }
-    // request.session.visitCount += 1;
-    // console.log(`Number of visits: ${request.session.visitCount}`);
+  const { speakerService } = params;
 
-    response.render("layout", { pageTitle: "Welcome", template: "index" });
+  router.get("/", async (request, response) => {
+    const topSpeakers = await speakerService.getList();
+    response.render("layout", {
+      pageTitle: "Welcome",
+      template: "index",
+      topSpeakers,
+    });
   });
 
   //gets home page when called with index.html
@@ -24,6 +25,7 @@ module.exports = (params) => {
   router.use("/speakers", speakersRoute(params));
   //added myself, mirrors html call above - not working
   router.use("/speakers.html", speakersRoute(params));
+
   router.use("/feedback", feedbackRoute(params));
   //added myself, mirrors html call above - not working
   router.use("/feedback.html", feedbackRoute(params));

@@ -25,7 +25,15 @@ app.use(
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
 
+app.locals.siteName = "Andrew Thul";
+
 app.use(express.static(path.join(__dirname, "./static")));
+
+app.use(async (request, response, next) => {
+  const names = await speakerService.getNames();
+  response.locals.speakerNames = names;
+  return next();
+});
 
 app.use(
   "/",

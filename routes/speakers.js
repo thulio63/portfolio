@@ -10,6 +10,10 @@ module.exports = (params) => {
     return response.json(speakers);
   });
 
+  router.get("/speakers.html", (request, response) => {
+    response.render("layout", { pageTitle: "Welcome", template: "index" });
+  });
+
   router.get("/:shortname", (request, response) => {
     return response.send(`Detail page of ${request.params.shortname}`);
   });
