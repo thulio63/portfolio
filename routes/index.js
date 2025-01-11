@@ -9,26 +9,18 @@ module.exports = (params) => {
   const { speakerService } = params;
 
   router.get("/", async (request, response) => {
+    const artwork = await speakerService.getAllArtwork();
     const topSpeakers = await speakerService.getList();
     response.render("layout", {
       pageTitle: "Welcome",
       template: "index",
       topSpeakers,
+      artwork,
     });
   });
 
-  //gets home page when called with index.html
-  router.get("/index.html", (request, response) => {
-    response.render("layout", { pageTitle: "Welcome", template: "index" });
-  });
-
   router.use("/speakers", speakersRoute(params));
-  //added myself, mirrors html call above - not working
-  router.use("/speakers.html", speakersRoute(params));
-
   router.use("/feedback", feedbackRoute(params));
-  //added myself, mirrors html call above - not working
-  router.use("/feedback.html", feedbackRoute(params));
 
   return router;
 };
