@@ -11,3 +11,10 @@ from package.json "scripts" section
     // }
     // request.session.visitCount += 1;
     // console.log(`Number of visits: ${request.session.visitCount}`);
+
+
+    app.get("/throw", (request, response, next) => {
+  setTimeout(() => {
+    return next(new Error("Something did throw (up)!"));
+  }, 500);
+});
