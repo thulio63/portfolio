@@ -1,7 +1,7 @@
 const express = require("express");
 
 const speakersRoute = require("./speakers");
-const feedbackRoute = require("./feedback");
+const feedbackRoute = require("./contact");
 
 const router = express.Router();
 
@@ -25,7 +25,7 @@ module.exports = (params) => {
   });
 
   router.use("/speakers", speakersRoute(params));
-  router.use("/feedback", feedbackRoute(params));
+  router.use("/contact", feedbackRoute(params));
 
   return router;
 };

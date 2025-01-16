@@ -30,7 +30,7 @@
       ]
     },
     {
-      "title": "Exploration",
+      "title": "Direction",
       "name": "Technical Directing",
       "shortname": "Tech_Direct",
       "summary": "Here I discuss my time as ATD at ISU, including all the bullet points on my resume.",
@@ -42,6 +42,22 @@
         "Riley_Rewington_04_tn.jpg",
         "Riley_Rewington_05_tn.jpg",
         "Riley_Rewington_06_tn.jpg"
+      ]
+    },
+    {
+      "title": "Exploration",
+      "name": "Independent Coding Work",
+      "shortname": "Solo_Code",
+      "summary": "Here I talk about the work I have done in my free time in software engineering.",
+      "description": "<p>Hillary is a sophomore art sculpture student at New York University, and has already won all the major international prizes for new painters, including the Divinity Circle, the International Painter's Medal, and the Academy of Paris Award. Hillary's CAC exhibit features paintings that contain only water images including waves, deep sea, and river.</p><p>An avid water sports participant, Hillary understands the water in many ways in which others do not, or may not ever have the opportunity. Her goal in creating the CAC exhibit was to share with others the beauty, power, and flow of natural bodies of water throughout the world. In addition to the display, Hilary also hosts a session on Tuesday called Deep Sea Wonders, which combines her love of deep sea diving and snorkeling, with instruction for capturing the beauty of underwater explorations on canvas.</p>",
+      "artwork": [
+        "Hillary_Goldwynn_01_tn.jpg",
+        "Hillary_Goldwynn_02_tn.jpg",
+        "Hillary_Goldwynn_03_tn.jpg",
+        "Hillary_Goldwynn_04_tn.jpg",
+        "Hillary_Goldwynn_05_tn.jpg",
+        "Hillary_Goldwynn_06_tn.jpg",
+        "Hillary_Goldwynn_07_tn.jpg"
       ]
     }
   ]
