@@ -1,5 +1,5 @@
-const fs = require('fs');
-const util = require('util');
+const fs = require("fs");
+const util = require("util");
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -27,12 +27,12 @@ class FeedbackService {
   /**
    * Add a new feedback item
    * @param {*} name The name of the user
-   * @param {*} title The title of the feedback message
+   * @param {*} subject The title of the feedback message
    * @param {*} message The feedback message
    */
-  async addEntry(name, email, title, message) {
+  async addEntry(name, email, subject, message) {
     const data = (await this.getData()) || [];
-    data.unshift({ name, email, title, message });
+    data.unshift({ name, email, subject, message });
     return writeFile(this.datafile, JSON.stringify(data));
   }
 
@@ -40,7 +40,7 @@ class FeedbackService {
    * Fetches feedback data from the JSON file provided to the constructor
    */
   async getData() {
-    const data = await readFile(this.datafile, 'utf8');
+    const data = await readFile(this.datafile, "utf8");
     if (!data) return [];
     return JSON.parse(data);
   }

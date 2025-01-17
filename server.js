@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 
 const FeedbackService = require("./services/FeedbackService");
 const SpeakerService = require("./services/SpeakerService");
-const { render } = require("ejs");
+//const { render } = require("ejs");
 
 const feedbackService = new FeedbackService("./data/feedback.json");
 const speakerService = new SpeakerService("./data/speakers.json");
@@ -26,6 +26,7 @@ app.use(
 );
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./views"));
